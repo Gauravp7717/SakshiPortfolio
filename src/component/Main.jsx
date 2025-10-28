@@ -10,6 +10,77 @@ export default function DesignerPortfolio() {
     setIsVisible(true);
   }, []);
 
+  const expertise = [
+    { name: "Art Direction" },
+    { name: "Social Media" },
+    { name: "Print Ads" },
+    { name: "Web Design" },
+    { name: "Video Editing" },
+    { name: "Brand Design" },
+  ];
+
+  const software = [
+    {
+      name: "Photoshop",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/2101px-Adobe_Photoshop_CC_icon.svg.png",
+      color: "from-cyan-600 to-cyan-400",
+    },
+    {
+      name: "Illustrator",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
+      color: "from-orange-600 to-orange-400",
+    },
+    {
+      name: "XD",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg",
+      color: "from-pink-600 to-pink-400",
+    },
+    {
+      name: "After Effects",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg",
+      color: "from-purple-700 to-purple-500",
+    },
+    {
+      name: "Premiere Pro",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
+      color: "from-purple-600 to-purple-400",
+    },
+    {
+      name: "Lightroom",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg/1051px-Adobe_Photoshop_Lightroom_CC_logo.svg.png",
+      color: "from-cyan-700 to-cyan-500",
+    },
+    {
+      name: "InDesign",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg",
+      color: "from-pink-700 to-pink-500",
+    },
+    {
+      name: "Figma",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "Word",
+      logo: "https://icon2.cleanpng.com/lnd/20241121/jk/8dac0cadf8cbec61ad85ae23395ca0.webp",
+      color: "from-blue-600 to-blue-400",
+    },
+    {
+      name: "PowerPoint",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Microsoft_PowerPoint_2013-2019_logo.svg/1128px-Microsoft_PowerPoint_2013-2019_logo.svg.png",
+      color: "from-orange-600 to-orange-400",
+    },
+    {
+      name: "Storybook",
+      logo: "https://avatars.githubusercontent.com/u/22632046?s=280&v=4",
+      color: "from-pink-500 to-pink-300",
+    },
+    {
+      name: "Cinema 4D",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGp3rp3QFKb6W2KkBh7u1SN8X7_-QIvZ0Wvg&s",
+      color: "from-blue-500 to-cyan-400",
+    },
+  ];
   const graphicWorks = [
     {
       id: 1,
@@ -43,6 +114,24 @@ export default function DesignerPortfolio() {
     },
     {
       id: 6,
+      title: "Typography Art",
+      image: "/verrry.jpg",
+      category: "Art",
+    },
+    {
+      id: 7,
+      title: "Logo Collection",
+      image: "/3.jpg",
+      category: "Branding",
+    },
+    {
+      id: 8,
+      title: "Packaging Design",
+      image: "/verry.jpg",
+      category: "Product",
+    },
+    {
+      id: 9,
       title: "Typography Art",
       image: "/verrry.jpg",
       category: "Art",
@@ -154,7 +243,7 @@ export default function DesignerPortfolio() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-gray-300">
               <p className="text-lg leading-relaxed">
-                With over 5 years of experience in visual design and video
+                With over 3 years of experience in visual design and video
                 production, I bring brands to life through compelling visuals
                 and dynamic storytelling.
               </p>
@@ -207,7 +296,7 @@ export default function DesignerPortfolio() {
             >
               Graphic Design
             </button>
-            <button
+            {/* <button
               onClick={() => setActiveTab("video")}
               className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeTab === "video"
@@ -216,7 +305,7 @@ export default function DesignerPortfolio() {
               }`}
             >
               Video Editing
-            </button>
+            </button> */}
           </div>
 
           {/* Graphics Grid */}
@@ -343,6 +432,67 @@ export default function DesignerPortfolio() {
           </div>
         </div>
       )}
+
+      <section className="min-h-screen bg-gradient-to-br p-8 md:p-16 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute w-96 h-96 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+          <div
+            className="absolute w-96 h-96 bg-pink-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Expertise Section */}
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="text-5xl">⭐</span>
+              Expertise
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
+              {expertise.map((item, index) => (
+                <button
+                  key={index}
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-8 py-4 rounded-full text-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)] transition-all duration-300 shadow-lg"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Software Skills Section */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="text-5xl">⭐</span>
+              Software Skills
+            </h2>
+
+            <div className="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-3xl">
+              {software.map((app, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center gap-2 group"
+                >
+                  <div
+                    className={`w-20 h-20 bg-gradient-to-br ${app.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white/20 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all duration-300 backdrop-blur-sm`}
+                  >
+                    <img
+                      src={app.logo}
+                      alt={app.name}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+                  <span className="text-purple-300 text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    {app.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer Section */}
       <footer className="relative py-16 px-4 border-t border-white/10">
